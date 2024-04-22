@@ -3,6 +3,24 @@ const { AIData } = require('../dbmodels/aiDb.js');
 const { GoogleGenerativeAI } = require("@google/generative-ai");
 const axios = require('axios');
 
+async function getreq(q) {
+    try {
+        let subscriptionKey = process.env.KEY;
+        let host = 'api.bing.microsoft.com';
+        let path = '/v7.0/images/search';
+        let term = q;
+
+        const response = await axios.get(`https://${host}${path}?q=${encodeURIComponent(term)}`, {
+            headers: {
+                'Ocp-Apim-Subscription-Key': subscriptionKey,
+            }
+        });
+        return response.data;
+    } catch (error) {
+        console.error('Error:', error.response.data);
+        throw new Error('Failed to fetch data from the API.');
+    }
+}
 
 module.exports.index = (req, res) => {
     res.render('main/index.ejs');
@@ -59,3 +77,20 @@ module.exports.searchIndex = async (req, res) => {
     }
 
 };
+
+module.exports.imageSearch = async (req, res) => {
+    let { q } = req.body;
+    console.log("Search query:", q); // Debugging statement
+
+    if (req.file) {
+        let url = req.file.path;
+        let filename = req.file.filename;
+        console.log("File uploaded:", filename); // Debugging statement
+    }
+
+    q = q.toLowerCase();
+    const images = await getreq(q); // assuming getreq is an asynchronous function
+    console.log("Images retrieved:", images); // Debugging statement
+
+    res.render('main/imagesearch.ejs', { images, q });
+}

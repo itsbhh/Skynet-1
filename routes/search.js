@@ -13,7 +13,8 @@ router.route('/')
 
 router.route('/search')
     .post(upload.single('search[file]'), wrapAsync(searchController.searchIndex));
-
+router.route('/image')    
+    .post(upload.single('search[file]'), wrapAsync(searchController.imageSearch));
 
 
 module.exports = router;

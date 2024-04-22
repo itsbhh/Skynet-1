@@ -1300,4 +1300,26 @@ footer {
 .mobile-footer a {
   text-decoration: none;
   color: #333;
+=======
+.imageS{
+  border: none !important;
+}
+.col{
+  margin-top: 3%;
+}
+.search-img{
+  border-radius: 18px;
+  height: 15rem;
+  border: 2px solid rgb(211, 211, 211);
+  box-shadow: 0 2px 1px rgba(0,0,0,0.09), 0 4px 2px rgba(0,0,0,0.09), 0 8px 4px rgba(0,0,0,0.09), 0 16px 8px rgba(0,0,0,0.09), 0 32px 16px rgba(0,0,0,0.09);
+}
+.img-link{
+  text-decoration: none;
+  color: gray;
+}
+.img-link:hover{
+  text-decoration: underline;
+}
+.img-content{
+  color: rgb(91, 91, 91) !important;
 }
