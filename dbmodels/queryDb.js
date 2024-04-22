@@ -5,7 +5,8 @@ const searchSchema = new Schema({
     query: String,
     result: {
         query: String,
-        data: Object
+        data: Object,
+        image: Object
     },
     file: {
         url: String,

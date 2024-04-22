@@ -4,8 +4,8 @@
       <img src="/assets/logo2.png" alt="SKYNET" width="160" height="80">
     </a>
     <form class="d-flex" method="post" action="/home/search" enctype="multipart/form-data">
-      <input class=" s-box form-control me-2 rounded-pill" type="search" placeholder="Search" aria-label="Search"
-        value="<%=q%>" name="search[q]">
+      <input class="s-box form-control me-2 rounded-pill" type="search" placeholder="Search" aria-label="Search"
+        value="<%=q%>" name="search[q]" id="searchInput">
       <span class="mag-glass">
         <i class="fa-solid fa-magnifying-glass fa-lg"></i>
       </span>
@@ -14,7 +14,7 @@
     <i class="fa-solid fa-microphone fa-xl"></i>
     <img class="language" src="/assets/language.png" width="50px" height="50px">
     <i class="fa-solid fa-user fa-xl" onclick="toggleMenu()"></i>
-    <i class="fa-solid fa-bars fa-xl"onclick="toggleMen()"></i>
+    <i class="fa-solid fa-bars fa-xl" onclick="toggleMen()"></i>
   </div>
   <div class="menu-drop" id="menuDropdown">
     <i class="fa-solid fa-xmark close-icon"></i>
@@ -56,7 +56,7 @@
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
         <a class="nav-link" href="#">Search</a>&nbsp;&nbsp;
-        &nbsp;&nbsp;<a class="nav-link" href="#">Image</a>
+        &nbsp;&nbsp;<button class="nav-link" href="/home/images" id="imageLink">Image</button>
         &nbsp;&nbsp; <a class="nav-link" href="#">News</a>
         &nbsp;&nbsp; <a class="nav-link" href="#">Trending</a>
       </div>
@@ -64,3 +64,55 @@
     </div>
   </div>
 </nav>
+<script>
+  document.getElementById("imageLink").addEventListener("click", function () {
+    console.log('Click');
+
+    // Retrieve the value from the input field
+    var inputValue = document.getElementById("searchInput").value;
+
+    // Define the data to be sent, including the input value
+    var requestData = {
+        "q": inputValue
+    };
+
+    // Make a POST request using fetch
+    fetch("/home/image", {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(requestData)
+    })
+      .then(response => {
+        if (response.ok) {
+          console.log("POST request successful!");
+          // Return the response body as text
+          return response.text();
+        } else {
+          console.error("POST request failed!");
+          throw new Error('POST request failed!');
+        }
+      })
+      .then(html => {
+        // Create a temporary div element
+        var tempDiv = document.createElement('div');
+        // Set the innerHTML of the temporary div with the HTML response
+        tempDiv.innerHTML = html;
+        // Replace the content of the current page with the content of the temporary div
+        document.body.innerHTML = tempDiv.innerHTML;
+        
+        // Add a reload button
+        var reloadButton = document.createElement('button');
+        reloadButton.textContent = 'Reload';
+        reloadButton.addEventListener('click', function() {
+            location.reload();
+        });
+        document.body.appendChild(reloadButton);
+      })
+      .catch(error => {
+        console.error("Error:", error);
+      });
+});
+
+</script>

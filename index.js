@@ -18,8 +18,7 @@ const aiRouter = require('./routes/ai.js');
 const userRouter = require('./routes/user.js');
 
 
-
-
+app.use(express.json());
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 app.use(express.static(path.join(__dirname, "public")));
@@ -82,13 +81,19 @@ app.get("/chart", (req, res) => {
 
 //BASIC ROUTES
 
-app.get('/test', (req,res)=>{
+app.get('/test', (req, res) => {
     res.render('main/skynetAI.ejs');
 })
 
 app.get("/about", (req, res) => {
     res.render("basic/about.ejs");
 });
+
+// app.get('/image', async (req, res) => {
+//     const images = await getreq();
+//     console.log(images);
+//     res.render('main/imagesearch.ejs', { images });
+// });
 
 app.get("/feedback", (req, res) => {
     res.render("basic/feedback.ejs");
