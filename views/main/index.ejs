@@ -1,16 +1,16 @@
 <% layout("/layouts/boilerplate") %>
 
 
-        <nav class="navbar bg-body-tertiary ">
-            <div class="navb">
-                <a class="navbar-brand" href="#">
-                    <img src="/assets/language.png" alt="" width="50" height="49">
+    <nav class="navbar bg-body-tertiary ">
+        <div class="navb">
+            <a class="navbar-brand" href="#">
+                <img src="/assets/language.png" alt="" width="50" height="49">
+            </a>
+            <% if(!currUser){ %>
+                <a href="/user/login" style="text-decoration: none;">
+                    <button class="btn mt-2 btn-outline-light bg-dark d-flex button-x ">Sign In</button>
                 </a>
-                <% if(!currUser){ %>
-                    <a href="/user/login" style="text-decoration: none;">
-                        <button class="btn mt-2 btn-outline-light bg-dark d-flex button-x ">Sign In</button>
-                    </a>
-                    <% } %>
+                <% } %>
                     <% if(currUser){ %>
                         <a href="/user/logout" style="text-decoration: none;">
                             <button class="btn mt-2 btn-outline-light bg-dark d-flex button-x ">Logout</button>
@@ -105,7 +105,7 @@
             <button id="searchButton" class="search-button">Search</button>
         </div>
     </div>
-    
+
     <div class="custom-btn">
         <button class="custom-button">
             <i class="fa-solid fa-pen" style="color: #000000;"></i>&nbsp; Customize
@@ -137,7 +137,148 @@
             </ul>
         </div>
     </footer>
+    <div class="mobile-footer-container">
+        <footer class="mobile-footer">
+            <div id="chatButton" class="footer-button">
+                <a href="/ai">
+                    <div><i class="bi bi-chat-left-text"></i></div>
+                    <div>Chat</div>
+               </a>
+            </div>
+            <div id="searchButton" class="footer-button active" onclick="highlightButton('searchButton')">
+                <div class="material-symbols-outlined">search</div>
+                <div>Search</div>
+            </div>
+            <div id="menuButton" class="footer-button" onclick="openMenu()">
+                <div class="material-symbols-outlined">menu</div>
+                <div>Menu</div>
+            </div>
+        </footer>
+    </div>
+
+    <div class="sidebar" id="sidebar">
+        <ul class="footer-links-mobile">
+            <li><a href="/about">About</a></li>
+            <li><a href="/advertising">Advertising</a></li>
+            <li><a href="/business">Business</a></li>
+            <li><a href="/howsearch">How Skynet Works</a></li>
+            <li><a href="/privacy">Privacy</a></li>
+            <li><a href="/terms">Terms</a></li>
+            <li><a href="/contact">Contact Us</a></li>
+        </ul>
+    </div>
+    </div>
+
+    <div class="trending-topics  show" id="trendingTopics">
+        <h2>Trending Topics</h2>
+        <ul class="trending-topic-list">
+            <li class="trending-topic-item">Covid-19 JN.1 Variant Cases</li>
+            <li class="trending-topic-item">KKR vs RCB Live</li>
+            <li class="trending-topic-item">Travis Head IPL 2024</li>
+            <li class="trending-topic-item">Current Released Movies</li>
+            <li class="trending-topic-item">Ram Mandir Ayodhya</li>
+            <li class="trending-topic-item">Economic growth of India</li>
+            <li class="trending-topic-item">All of us are dead season2</li>
+            <li class="trending-topic-item">MSD Raina Friendship</li>
+        </ul>
+    </div>
+
+
     <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const searchButton = document.getElementById('searchButton');
+            const trendingTopics = document.querySelector('.trending-topics');
+            const mobileFooterContainer = document.querySelector('.mobile-footer-container');
+
+            // Default: Show trending topics and highlight search button
+            trendingTopics.classList.add('show');
+            searchButton.classList.add('active');
+
+
+
+            window.addEventListener('DOMContentLoaded', function () {
+                if (window.innerWidth <= 400) {
+                    createMobileFooter();
+                }
+            });
+
+            function createMobileFooter() {
+                // Create a new footer element
+                var mobileFooter = document.createElement('footer');
+                mobileFooter.className = 'mobile-footer'; // Set the footer class
+
+                // Create three buttons for the footer
+                var chatButton = createFooterButton('Chat', '/ai');
+                var searchButton = createFooterButton('Search', '#', true); // Set the second button as active
+                var menuButton = createFooterButton('Menu', '#');
+
+                // Append buttons to the mobile footer
+                mobileFooter.appendChild(chatButton);
+                mobileFooter.appendChild(searchButton);
+                mobileFooter.appendChild(menuButton);
+
+                // Append the mobile footer to the existing mobile footer container
+                var mobileFooterContainer = document.querySelector('.mobile-footer-container');
+                mobileFooterContainer.appendChild(mobileFooter);
+
+                // Show the mobile footer container
+                mobileFooterContainer.style.display = 'block';
+            }
+
+            function createFooterButton(text, link, isActive = false) {
+                // Create a button element
+                var button = document.createElement('button');
+
+                // Set button text
+                button.textContent = text;
+
+                // Set button link
+                button.onclick = function () {
+                    window.location.href = link;
+                };
+
+                // Set button class based on isActive
+                button.className = isActive ? 'footer-button active' : 'footer-button';
+
+                return button;
+            }
+
+
+            function checkScreenWidth() {
+                const screenWidth = window.innerWidth;
+                if (screenWidth <= 400) {
+                    trendingTopics.classList.add('show'); // Show trending topics
+                } else {
+
+                    trendingTopics.classList.remove('show');
+                }
+            }
+
+            // Toggle trending topics visibility based on screen width
+            function toggleTrending() {
+                const screenWidth = window.innerWidth;
+                if (screenWidth <= 400) {
+                    trendingTopics.classList.toggle('show');
+                }
+            }
+
+            // Call checkScreenWidth initially and on window resize
+            checkScreenWidth();
+            window.addEventListener('resize', checkScreenWidth);
+        });
+        function highlightButton(buttonId) {
+            const buttons = document.querySelectorAll('.footer-button');
+            buttons.forEach(button => button.classList.remove('active'));
+
+            // Add 'active' class to the clicked button
+            document.getElementById(buttonId).classList.add('active');
+        }
+        function openMenu() {
+            var sidebar = document.getElementById("sidebar");
+
+
+            sidebar.classList.toggle("expanded");
+        }
         function toggleMenu() {
             console.log('Toggle menu clicked');
             let menuDropdown = document.getElementById('menuDropdown');
@@ -276,68 +417,64 @@
                 }
             });
         });
-            document.addEventListener('DOMContentLoaded', function () {
-    const uploadDialog = document.getElementById('uploadDialog');
-    const closeButton = document.getElementById('closeButton');
-    const dragDropArea = document.getElementById('dragDropArea');
-    const progressBarContainer = document.querySelector('.progress-bar-container');
-    const progressBar = document.querySelector('.progress-bar');
+        document.addEventListener('DOMContentLoaded', function () {
+            const uploadDialog = document.getElementById('uploadDialog');
+            const closeButton = document.getElementById('closeButton');
+            const dragDropArea = document.getElementById('dragDropArea');
+            const progressBarContainer = document.querySelector('.progress-bar-container');
+            const progressBar = document.querySelector('.progress-bar');
 
-    closeButton.addEventListener('click', function () {
-        uploadDialog.classList.add('hidden');
-    });
+            closeButton.addEventListener('click', function () {
+                uploadDialog.classList.add('hidden');
+            });
 
-    dragDropArea.addEventListener('dragover', function (event) {
-        event.preventDefault();
-        dragDropArea.classList.add('drag-over');
-    });
+            dragDropArea.addEventListener('dragover', function (event) {
+                event.preventDefault();
+                dragDropArea.classList.add('drag-over');
+            });
 
-    dragDropArea.addEventListener('dragleave', function () {
-        dragDropArea.classList.remove('drag-over');
-    });
+            dragDropArea.addEventListener('dragleave', function () {
+                dragDropArea.classList.remove('drag-over');
+            });
 
-    dragDropArea.addEventListener('drop', function (event) {
-        event.preventDefault();
-        dragDropArea.classList.remove('drag-over');
-        const files = event.dataTransfer.files;
-        handleFiles(files);
-    });
+            dragDropArea.addEventListener('drop', function (event) {
+                event.preventDefault();
+                dragDropArea.classList.remove('drag-over');
+                const files = event.dataTransfer.files;
+                handleFiles(files);
+            });
 
-    function handleFiles(files) {
-        if (files.length === 0) return;
+            function handleFiles(files) {
+                if (files.length === 0) return;
 
-        const file = files[0];
-        const reader = new FileReader();
+                const file = files[0];
+                const reader = new FileReader();
 
-        reader.onload = function (event) {
-            // Simulate uploading progress
-            uploadDialog.classList.remove('hidden');
-            progressBarContainer.classList.remove('hidden');
-            progressBar.style.width = '0%';
+                reader.onload = function (event) {
+                    // Simulate uploading progress
+                    uploadDialog.classList.remove('hidden');
+                    progressBarContainer.classList.remove('hidden');
+                    progressBar.style.width = '0%';
 
-            let progress = 0;
-            const interval = setInterval(function () {
-                progress += Math.random() * 5;
-                progressBar.style.width = `${progress}%`;
+                    let progress = 0;
+                    const interval = setInterval(function () {
+                        progress += Math.random() * 5;
+                        progressBar.style.width = `${progress}%`;
 
-                if (progress >= 100) {
-                    clearInterval(interval);
-                    setTimeout(function () {
-                        uploadDialog.classList.add('hidden');
-                        progressBarContainer.classList.add('hidden');
-                        progressBar.style.width = '0%';
-                    }, 1000);
-                }
-            }, 300);
-        };
+                        if (progress >= 100) {
+                            clearInterval(interval);
+                            setTimeout(function () {
+                                uploadDialog.classList.add('hidden');
+                                progressBarContainer.classList.add('hidden');
+                                progressBar.style.width = '0%';
+                            }, 1000);
+                        }
+                    }, 300);
+                };
 
-        reader.readAsDataURL(file);
-    }
-});
-
-
-
-
+                reader.readAsDataURL(file);
+            }
+        });
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
