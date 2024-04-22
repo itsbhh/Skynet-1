@@ -178,7 +178,6 @@
     top: 50%;
     transform: translateY(-50%);
     margin-right: 20px;
-    vertical-align: middle;
   }
   .menu-item span:hover {
     cursor: pointer;
@@ -260,4 +259,68 @@
   .close-icon {
     transition: transform 0.3s ease-in-out;
   }
+
+  @media (max-width: 768px) {
+    /* Adjust styles for smaller screens */
+    .navbar {
+        flex-direction: column; /* Stack navbar items vertically */
+        overflow-x: hidden;
+    }
+
+    .navbar-nav {
+       
+    }
+
+    .navbar-brand {
+      margin-top: -3%;
+      margin-left: 38%;
+    }
+    .fa-magnifying-glass{
+      margin-left: -50% !important;
+    }
+    .d-flex{
+      margin-top:0%; 
+      margin-left: -18% !important;
+      width: 150% !important;
+      height: 50% !important;
+    }
+    .s-box{
+      width: 100% !important;
+      margin-left: 0 !important;
+    }
+    .fa-camera{
+      margin-top:1%; 
+      margin-left: -63% !important;
+    }
+    .fa-bars{
+      margin-top:1%; 
+      margin-right: -18% !important;
+    }
+    .fa-microphone{
+      margin-top:1%; 
+      margin-left: -10% !important;
+    }
+    .fa-user{
+      margin-top:-25%; 
+      margin-right: -16% !important;
+    }
+    .language{
+      margin-top:1%;
+      margin-right: -10% !important;
+    }
+    .navbar-nav.show {
+        display: flex; /* Show navigation links */
+        flex-direction: column;
+        align-items: center;
+    }
+    .navbar-expand-lg{
+      height: 30% !important;
+      padding:10%!important ;
+    }
+    .nav-link{
+      display: flex;
+      justify-content: start;
+      color: white !important;
+    }
+}
   
