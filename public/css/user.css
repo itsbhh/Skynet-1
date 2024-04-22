@@ -465,3 +465,257 @@ body {
         background-color: white;
     }
 }
+
+/* RESPONSIVE SIGNUP */
+
+/* Media query for responsiveness */
+/* Media Query for 768px */
+@media screen and (max-width: 768px) {
+    /* Change main-sign-up layout to column */
+    .main-sign-up {
+        flex-direction: column;
+        padding: 10px;
+        overflow-y: auto;
+        overflow-x: hidden !important; 
+    }
+
+    /* Place image on top */
+    .main-2-sign-up {
+        order: 1; /* Move image section to the top */
+    }
+
+    /* Decrease image size */
+    .main-2-sign-up img {
+        width: 100%; /* Decrease width for image */
+        height: auto; /* Maintain aspect ratio */
+        margin-top: 20%;
+        margin-left: 45%;
+    }
+
+    /* Adjust order of sections */
+    .sign-up {
+        order: 2; /* Move sign-up section below the image */
+    }
+
+    /* Adjustments for smaller screens */
+    .sign-up header {
+        padding: 10px;
+        font-size: 18px; /* Adjust font size */
+    }
+
+    /* Adjusting form margin */
+    .sign-up form {
+        margin-top: 20px;
+    }
+
+    /* Social media icons */
+    .sign-up .social-media svg {
+        margin-left: 1rem; /* Adjust margin */
+    }
+
+    /* Header adjustments */
+    .sign-up header::before,
+    .sign-up header::after {
+        width: 10px;
+        height: 10px;
+        box-shadow: 5px 0 0 0 white;
+    }
+    .sign-up header::before{
+        margin-left: 23%;
+    }
+
+    .sign-up header::after {
+        right: -10px;
+        box-shadow: -5px 0 0 0 white;
+    }
+    #u-input{
+        width: 100%;
+    }
+    #d-input{
+        width: 100%;
+       
+    }
+    .d-in{
+        width: 50%;
+    }
+    .u-in{
+        width: 50%;
+    }
+}
+/* Media query for screens up to 360px */
+@media (max-width: 360px) {
+    /* Center the form within the sign-up container */
+    .sign-up form {
+        margin: 0 auto; /* Center the form in the container */
+    }
+
+    /* Center the sign-up container */
+    .sign-up {
+        margin: 0 auto; /* Center the sign-up container */
+        width: 100%; /* Make the width of the sign-up container 100% */
+    }
+    .main-2-sign-up img{
+        height: 90px;
+        margin-bottom: 10px ;
+        margin-left: 47% !important;
+        margin-top: 40px;
+    }
+    
+}
+@media only screen and (min-width: 360px) and (max-width: 768px)  {
+    /* Center the form within the sign-up container */
+    .sign-up form {
+        margin: 0 auto; /* Center the form in the container */
+    }
+
+    /* Center the sign-up container */
+    .sign-up {
+        margin: 0 auto; /* Center the sign-up container */
+        width: 100%; /* Make the width of the sign-up container 100% */
+        margin-left: 10px;
+    }
+    .main-2-sign-up img{
+        margin-bottom: 25px ;
+        margin-left: 47%;
+    }
+}
+@media (max-width: 480px){
+    .main-2-sign-up img{
+        margin-bottom: 15px;
+        margin-left: 40%;
+    }
+    .main-sign-up{
+        overflow-x: hidden !important; 
+    }
+}
+
+
+
+/* RESPONSIVE LOGIN */
+
+/* Adjustments for screen sizes up to 768px */
+@media only screen and (min-width: 360px) and (max-width: 768px) {
+    /* Adjust layout for screen widths up to 768px */
+    .main {
+        flex-direction: column; /* Change layout to column */
+        overflow-x: hidden;
+    }
+
+    /* Place image at the top below the header */
+    .main-2 {
+        order: 1; /* Move image section to the top */
+        width: 100%; /* Full width */
+        margin-bottom: 20px; /* Add margin for separation */
+    }
+
+    /* Decrease image size */
+    .main-2 img {
+        width: 70%; /* Decrease image width */
+        margin: 10px auto; /* Center image */
+        margin-top: 10%;
+    }
+
+    /* Adjust order of sections */
+    .log-in {
+        order: 2; /* Move log-in section below the image */
+        width: 100%; /* Full width */
+        margin-left: 0;
+        margin-top: -10%;
+    }
+}
+
+/* Adjustments for screen sizes up to 480px */
+@media screen and (max-width: 600px) {
+    /* Adjust layout for screen widths up to 480px */
+    .main {
+        flex-direction: column; /* Change layout to column */
+        overflow-x: hidden;
+    }
+
+    /* Place image at the top below the header */
+    .main-2 {
+        order: 1; /* Move image section to the top */
+        width: 100%; /* Full width */
+        margin-bottom: 20px; /* Add margin for separation */
+    }
+
+    /* Decrease image size */
+    .main-2 img {
+        width: 70%; /* Decrease image width */
+        margin: 10px auto; /* Center image */
+        margin-top: 10%;
+    }
+
+    /* Adjust order of sections */
+    .log-in {
+        order: 2; /* Move log-in section below the image */
+        width: 100%; /* Full width */
+        margin-top: -70px;
+    }
+}
+/* Adjustments for screen sizes up to 480px */
+@media screen and (max-width: 485px) {
+    /* Adjust layout for screen widths up to 480px */
+    .main {
+        flex-direction: column; /* Change layout to column */
+        overflow-x: hidden;
+    }
+
+    /* Place image at the top below the header */
+    .main-2 {
+        order: 1; /* Move image section to the top */
+        width: 100%; /* Full width */
+        margin-bottom: 20px; /* Add margin for separation */
+    }
+
+    /* Decrease image size */
+    .main-2 img {
+        width: 70%; /* Decrease image width */
+        margin: 10px auto; /* Center image */
+        margin-top: 15%;
+    }
+
+    /* Adjust order of sections */
+    .log-in {
+        order: 2; /* Move log-in section below the image */
+        width: 100%; /* Full width */
+        margin-top: -75px;
+    }
+}
+/* Adjustments for screen sizes up to 360px */
+@media screen and (max-width: 360px) {
+    /* Adjust layout for screenwidths up to 360px */
+    .main {
+        flex-direction: column; /* Change layout to column */
+    }
+
+    /* Place image at the top below the header */
+    .main-2 {
+        order: 1; /* Move image section to the top */
+        width: 100%; /* Full width */
+        margin-bottom: 20px; /* Add margin for separation */
+    }
+
+    /* Decrease image size */
+    .main-2 img {
+        width: 65%; /* Decrease image width */
+        margin: 10px auto; /* Center image */
+        margin-top: 20%;
+    }
+
+    /* Adjust order of sections */
+    .log-in {
+        order: 2; /* Move log-in section below the image */
+        width: 100%; /* Full width */
+        margin-left: -3px;
+    }
+    
+}
+
+
+
+
+
+
+
+
