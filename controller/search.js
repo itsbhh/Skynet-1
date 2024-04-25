@@ -90,7 +90,6 @@ module.exports.imageSearch = async (req, res) => {
 
     q = q.toLowerCase();
     const images = await getreq(q); // assuming getreq is an asynchronous function
-    console.log("Images retrieved:", images); // Debugging statement
 
     res.render('main/imagesearch.ejs', { images, q });
 }

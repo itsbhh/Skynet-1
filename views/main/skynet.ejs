@@ -64,7 +64,7 @@
         </div>
       </div>
       <div class="username-container">
-        <div class="username">Username</div>
+        <div class="username"><%=currUser.fullname%></div>
         <div class="icons-right">
           <div class="image-container "><img src="/assets/robot.jpg" width="35px" height="35px">
             <div class="dropdown-content">
@@ -74,7 +74,7 @@
                   <div class="avatar">
                     <img src="/assets/robot.jpg" alt="Robot Avatar">
                   </div>
-                  <h3>Username</h3>
+                  <h3><%=currUser.fullname%></h3>
                   <div class="status">
                     <span class="status-dot"></span> Online
                   </div>
@@ -120,8 +120,10 @@
         <!-- Add more chat messages here -->
       </div>
     </div>
+    <br><br><br><br><br>
     <form method="POST" action="/ai" enctype="multipart/form-data">
-      <div class="aifooter">
+
+      <div class="aifooter indexAI">
         <div class="chat-footer">
           <div class="input-group">
               <div class="url-input" style="display: none;">

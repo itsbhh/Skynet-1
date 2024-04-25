@@ -64,7 +64,7 @@
         </div>
       </div>
       <div class="username-container">
-        <div class="username">Username</div>
+        <div class="username"><%=currUser.fullname%></div>
         <div class="icons-right">
           <div class="image-container "><img src="/assets/robot.jpg" width="35px" height="35px">
             <div class="dropdown-content">
@@ -74,7 +74,7 @@
                   <div class="avatar">
                     <img src="/assets/robot.jpg" alt="Robot Avatar">
                   </div>
-                  <h3>Username</h3>
+                  <h3><%=currUser.fullname%></h3>
                   <div class="status">
                     <span class="status-dot"></span> Online
                   </div>
@@ -107,7 +107,7 @@
           <% for (let i=0; i < chatHs.history[0].parts.length; i++) { %>
             <div class="chat-area">
               <div class="chat-message">
-                <strong><i class="fas fa-user"></i> User: <span class="timestamp">3:30 PM</span></strong>
+                <strong><i class="fas fa-user"></i> <%=currUser.fullname%> <span class="timestamp"><%=time%></span></strong>
                 <div class="icons-right">
                   <i class="fas fa-thumbtack pinned-icon"></i>
                 </div>
@@ -116,28 +116,27 @@
                 </div>
               </div>
               <% if
-                (chatHs.history[1].parts[i].text=='Hello! I am Skynet, a multi-modal AI language model developed by Twoward Technology'
-                ) { %>
+                (chatHs.history[1].parts[i].text=='Hello! I am Skynet, a multi-modal AI language model developed by Twoward Technology, Our Founder name is Sankalp Jain with his innovative mind and One Stop Solution Skynet is made with much more capabilities') { %>
                 <% i=i+1; %>
                   <div class="chat-message">
-                    <strong><i class="fas fa-robot"></i> Skynet AI <span class="time">3:30 PM</span></strong>
+                    <strong><i class="fas fa-robot"></i> Skynet AI <span class="time"><%=time%></span></strong>
                     <div class="icons-right">
                       <i class="fas fa-thumbtack pinned-icon"></i>
                     </div>
                     <div class="text">
-                      <%= chatHs.history[1].parts[i].text %>
+                      <%- chatHs.history[1].parts[i].text %>
                     </div>
                   </div>
                   <% i=i-1;%>
                     <% } else { %>
                       <% i=i+1; %>
                         <div class="chat-message">
-                          <strong><i class="fas fa-robot"></i> Skynet AI <span class="time">3:30 PM</span></strong>
+                          <strong><i class="fas fa-robot"></i> Skynet AI <span class="time"><%=time%></span></strong>
                           <div class="icons-right">
                             <i class="fas fa-thumbtack pinned-icon"></i>
                           </div>
                           <div class="text">
-                            <%= chatHs.history[1].parts[i].text %>
+                            <%- chatHs.history[1].parts[i].text %>
                           </div>
                         </div>
                         <% i=i-1;%>

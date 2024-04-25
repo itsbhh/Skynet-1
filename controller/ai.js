@@ -56,6 +56,17 @@ function formatText(text) {
     return text;
 }
 
+function getCurrentTime() {
+    const now = new Date();
+    const hours = now.getHours();
+    const minutes = now.getMinutes();
+    const amOrPm = hours >= 12 ? 'PM' : 'AM';
+    const formattedHours = hours % 12 || 12;
+    const formattedMinutes = minutes < 10 ? `0${minutes}` : minutes;
+    return `${formattedHours}:${formattedMinutes} ${amOrPm}`;
+}
+
+
 
 module.exports.index = async (req, res) => {
     res.render("main/skynet.ejs");
@@ -65,7 +76,7 @@ module.exports.answer = async (req, res) => {
     let { input } = req.body.ai;
     const _id = req.body._id;
     input = input.toLowerCase();
-
+    time = getCurrentTime();
     if (req.file) {
         const fileExtension = path.extname(req.file.originalname).toLowerCase();
         const mimeType = mime.lookup(fileExtension);
@@ -140,7 +151,6 @@ module.exports.answer = async (req, res) => {
         const response = await run(input, _id);
         let text = response.text;
         const chatHs = response.chatHs;
-        text = formatText(text);
-        res.render("main/skynetAI.ejs", { text, input, chatHs, mime });
+        res.render("main/skynetAI.ejs", { text, input, chatHs, mime, time });
     }
 };
