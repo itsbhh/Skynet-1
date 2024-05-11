@@ -60,9 +60,9 @@ app.use((req, res, next) => {
     res.locals.currUser = req.user;
     next();
 });
-
+const url = process.env.URL_DB;
 async function main() {
-    await mongoose.connect('mongodb://127.0.0.1:27017/skynet');
+    await mongoose.connect(url);
 }
 
 main().then(() => {
@@ -74,6 +74,10 @@ main().then(() => {
 app.use("/home", searchRouter);
 app.use("/ai", aiRouter);
 app.use('/user', userRouter);
+
+app.get('/', (req,res)=>{
+    res.redirect('/home');
+});
 
 app.get("/chart", (req, res) => {
     res.render('chart.ejs');
