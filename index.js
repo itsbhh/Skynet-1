@@ -1,4 +1,3 @@
-require('dotenv').config();
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
@@ -29,7 +28,7 @@ app.engine('ejs', ejsMate);
 
 
 const sessionOption = {
-    secret: process.env.SECRET,
+    secret: SECRET,
     resave: false,
     saveUninitialized: true,
     cookie: {

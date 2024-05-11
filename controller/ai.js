@@ -1,7 +1,7 @@
 require('dotenv').config();
 const axios = require('axios');
 const { GoogleGenerativeAI } = require("@google/generative-ai");
-const genAI = new GoogleGenerativeAI(process.env.API_KEY);
+const genAI = new GoogleGenerativeAI(API_KEY);
 const { AIData, history } = require("../dbmodels/aiDb.js");
 const multer = require('multer');
 const pdfParse = require('pdf-parse');

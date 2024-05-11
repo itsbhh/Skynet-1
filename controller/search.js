@@ -5,7 +5,7 @@ const axios = require('axios');
 
 async function getreq(q) {
     try {
-        let subscriptionKey = process.env.KEY;
+        let subscriptionKey = KEY;
         let host = 'api.bing.microsoft.com';
         let path = '/v7.0/images/search';
         let term = q;
@@ -46,8 +46,8 @@ module.exports.searchIndex = async (req, res) => {
             // res.send(see);
             res.render('main/searchresult.ejs', { see, q });
             // Update the database with fresh data from API for future searches
-            const apiKey = process.env.SEARCH_API_KEY;
-            const cx = process.env.SEARCH_ID;
+            const apiKey = SEARCH_API_KEY;
+            const cx = SEARCH_ID;
             const apiUrl = `https://www.googleapis.com/customsearch/v1?key=${apiKey}&cx=${cx}&q=${encodeURIComponent(q)}&safe=active`;
             const searchResponse = await axios.get(apiUrl);
             const ros = searchResponse.data;
@@ -65,8 +65,8 @@ module.exports.searchIndex = async (req, res) => {
             },
         });
         console.log(see);
-        const apiKey = process.env.SEARCH_API_KEY;
-        const cx = process.env.SEARCH_ID;
+        const apiKey = SEARCH_API_KEY;
+        const cx = SEARCH_ID;
         const apiUrl = `https://www.googleapis.com/customsearch/v1?key=${apiKey}&cx=${cx}&q=${encodeURIComponent(q)}&safe=active`;
         const searchResponse = await axios.get(apiUrl);
         const ros = searchResponse.data;
