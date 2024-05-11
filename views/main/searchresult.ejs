@@ -1,7 +1,7 @@
 <% layout("/layouts/boilerplate2") %>
 
 
-  <input type="hidden" class="api" id="api" value="<%= API_KEY %>">
+  <input type="hidden" class="api" id="api" value="<%= process.env.API_KEY %>">
   <%- include('../includes/searchpage-nav.ejs') %>
     <div class="container">
       <div class="row">

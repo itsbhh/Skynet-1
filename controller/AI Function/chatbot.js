@@ -1,5 +1,5 @@
 const { GoogleGenerativeAI } = require("@google/generative-ai");
-const genAI = new GoogleGenerativeAI(API_KEY);
+const genAI = new GoogleGenerativeAI(process.env.API_KEY);
 const { history } = require("../../dbmodels/aiDb");
 
 function formatText(text) {
