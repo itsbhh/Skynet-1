@@ -107,8 +107,8 @@ app.post("/feedback", async (req, res) => {
     //To Be Written
 });
 
-app.get("/privacy", (req, res) => {
-    res.render("includes/privacy.ejs");
+app.get("/comingsoon", (req, res) => {
+    res.render("main/coming.ejs");
 });
 
 
