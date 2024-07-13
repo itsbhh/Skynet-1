@@ -3,7 +3,6 @@
 html {
   font-size: 14.5px;
 }
-
 body {
   font-family: "Open Sans", sans-serif;
   line-height: 1.45em;
@@ -25,44 +24,36 @@ body {
 .grid-container {
   margin-top: 48px;
   display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr 1fr;
   grid-gap: 1.1312rem;
-  grid-template-columns: repeat(auto-fit, 12.8rem);
-  grid-auto-rows: 12.8rem;
-  grid-auto-flow: dense;
   justify-content: center;
   max-width: 75em;
 }
 
 .card {
-  grid-row: auto/span 1;
-  grid-column: auto/span 1;
   background-color: rgb(247, 247, 247);
   border-radius: 20px !important;
   box-shadow: 1px 3px 3px rgba(0, 10, 20, 0.06);
-  margin-top: 35px;
 }
 
 .card__image {
   height: 100%;
-  max-height: 100%;
   width: 100%;
   display: flex;
 }
 
 .card__image img {
-  height: fit-content;
-  border-radius: 20px !important;
-  min-height: 100%;
-  max-height: 100%;
+  height: 100%;
   width: 100%;
-  -o-object-fit: cover;
+  border-radius: 20px !important;
   object-fit: cover;
 }
 
 .card--2x {
-  grid-row: auto/span 2;
-  grid-column: auto/span 2;
+  grid-row: span 2;
 }
+
 
 .search-heading {
   display: flex;

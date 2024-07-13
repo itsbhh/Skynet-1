@@ -3,6 +3,27 @@ const { AIData } = require('../dbmodels/aiDb.js');
 const { GoogleGenerativeAI } = require("@google/generative-ai");
 const axios = require('axios');
 
+// Replace with your actual API key and Search Engine ID
+
+async function searchRelatedQueries(query) {
+    const url = `http://suggestqueries.google.com/complete/search?client=firefox&q=${encodeURIComponent(query)}`;
+
+  try {
+    const response = await axios.get(url);
+    const suggestions = response.data[1]; // The second element of the response contains the suggestions
+
+    console.log(suggestions);
+    return suggestions;
+  } catch (error) {
+    console.error('Error fetching search suggestions:');
+  }
+}
+
+// Example usage
+
+
+
+
 async function getreq(q) {
     try {
         let subscriptionKey = process.env.KEY;
@@ -41,10 +62,12 @@ module.exports.searchIndex = async (req, res) => {
         console.log(condition);
         if (q == condition) {
             console.log("Condition 1.1 Triggered");
+            let suggestions = await searchRelatedQueries(q);
             //AI Code to be written in searchResult.ejs
             const prompt = q;
+            let cardImage = await getreq(q);
             // res.send(see);
-            res.render('main/searchresult.ejs', { see, q });
+            res.render('main/searchresult.ejs', { cardImage,suggestions,see, q });
             // Update the database with fresh data from API for future searches
             const apiKey = process.env.SEARCH_API_KEY;
             const cx = process.env.SEARCH_ID;
@@ -71,9 +94,11 @@ module.exports.searchIndex = async (req, res) => {
         const searchResponse = await axios.get(apiUrl);
         const ros = searchResponse.data;
         see.result.data = ros;
+        let suggestions = await searchRelatedQueries(q);
+        let cardImage = await getreq(q);
         await see.save();
         console.log("Condition 2 Triggered");
-        res.render('main/searchresult.ejs', { see, q });
+        res.render('main/searchresult.ejs', { cardImage,suggestions,see, q });
     }
 
 };

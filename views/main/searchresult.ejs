@@ -9,64 +9,75 @@
           <% if (see && see.result && see.result.data && see.result.data.items && see.result.data.items.length> 0) {%>
             <% see.result.data.items.forEach(function(sees) { %>
               <% if (sees.pagemap.hcard) { %>
-                <div class='main-container'>
-                  <div class='grid-container'>
-                    <div class='card card--2x'>
-                      <div class="card__image">
-                        <img src='https://cdn.britannica.com/05/236505-050-17B6E34A/Elon-Musk-2022.jpg'>
+                  <div class="main-container">
+                    <div class="grid-container">
+                      <div class="card card--2x">
+                        <div class="card__image">
+                          <img src="<%= cardImage.value[1].contentUrl%>"
+                            alt="<%= cardImage.value[1].name%>">
+                        </div>
                       </div>
-                    </div>
-                    <div class='card'>
-                      <div class='card__image'>
-                        <img
-                          src='https://images.pexels.com/photos/443416/pexels-photo-443416.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=750&amp;w=1260'>
+                      <div class="card">
+                        <div class="card__image">
+                          <img src="<%= cardImage.value[2].contentUrl%>"
+                            alt="<%= cardImage.value[2].name%>">
+                        </div>
+                        </div>
+                      </div>
+                      <div class="card">
+                        <div class="card__image">
+                          <img src="<%= cardImage.value[3].contentUrl%>"
+                            alt="<%= cardImage.value[3].name%>">
+                        </div>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <% } %>
-
-                  <% }); %>
                     <% } %>
 
-                      <% for (sees of see.result.data.items){%>
-                        <div class="search-heading">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
-                            class="bi bi-stars" viewBox="0 0 16 16">
-                            <path
-                              d="M7.657 6.247c.11-.33.576-.33.686 0l.645 1.937a2.89 2.89 0 0 0 1.829 1.828l1.936.645c.33.11.33.576 0 .686l-1.937.645a2.89 2.89 0 0 0-1.828 1.829l-.645 1.936a.361.361 0 0 1-.686 0l-.645-1.937a2.89 2.89 0 0 0-1.828-1.828l-1.937-.645a.361.361 0 0 1 0-.686l1.937-.645a2.89 2.89 0 0 0 1.828-1.828zM3.794 1.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387A1.73 1.73 0 0 0 4.593 5.69l-.387 1.162a.217.217 0 0 1-.412 0L3.407 5.69A1.73 1.73 0 0 0 2.31 4.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387A1.73 1.73 0 0 0 3.407 2.31zM10.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.16 1.16 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.16 1.16 0 0 0-.732-.732L9.1 2.137a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732z" />
-                          </svg>
-                          <a href="<%=sees.link%>" style="text-decoration: none; color: black">
-                            <h4>
-                              <%=sees.title%>
-                            </h4>
-                          </a>
-                        </div>
-                        <div class="demo">
-                          <a href="<%=sees.link%>">
-                            <%=sees.link%>
-                          </a>
-                          <p class="paragraph">
-                            <%=sees.snippet%>
-                          </p>
-                          <%if (sees && sees.pagemap && sees.pagemap.cse_image && sees.pagemap.cse_image.length> 0)
-                            {%>
-                            <img class="img-search" src='<%=sees.pagemap.cse_image[0].src%>'
-                              style=" height: 7%; width: 7%;">
-                            <% } else {%>
-                              <% console.log("No cse_image found for this item");%>
-                                <% }%>
-                        </div>
-                        <%}%>
-                          <div class="pages">
-                            <ul class="page-link">
-                              <li>1</li>
-                              <li>2</li>
-                              <li>3</li>
-                              <li>4</li>
-                              <li>NEXT...</li>
-                            </ul>
-                          </div>
+                      <% }); %>
+                        <% } %>
+
+                          <% for (sees of see.result.data.items){%>
+                            <div class="search-heading">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                                class="bi bi-stars" viewBox="0 0 16 16">
+                                <path
+                                  d="M7.657 6.247c.11-.33.576-.33.686 0l.645 1.937a2.89 2.89 0 0 0 1.829 1.828l1.936.645c.33.11.33.576 0 .686l-1.937.645a2.89 2.89 0 0 0-1.828 1.829l-.645 1.936a.361.361 0 0 1-.686 0l-.645-1.937a2.89 2.89 0 0 0-1.828-1.828l-1.937-.645a.361.361 0 0 1 0-.686l1.937-.645a2.89 2.89 0 0 0 1.828-1.828zM3.794 1.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387A1.73 1.73 0 0 0 4.593 5.69l-.387 1.162a.217.217 0 0 1-.412 0L3.407 5.69A1.73 1.73 0 0 0 2.31 4.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387A1.73 1.73 0 0 0 3.407 2.31zM10.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.16 1.16 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.16 1.16 0 0 0-.732-.732L9.1 2.137a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732z" />
+                              </svg>
+                              <a href="<%=sees.link%>" style="text-decoration: none; color: black">
+                                <h4>
+                                  <%=sees.title%>
+                                </h4>
+                              </a>
+                            </div>
+                            <div class="demo">
+                              <a href="<%=sees.link%>">
+                                <%=sees.link%>
+                              </a>
+                              <p class="paragraph">
+                                <%=sees.snippet%>
+                              </p>
+                              <%if (sees && sees.pagemap && sees.pagemap.cse_image && sees.pagemap.cse_image.length> 0)
+                                {%>
+                                <img class="img-search" src='<%=sees.pagemap.cse_image[0].src%>'
+                                  style=" height: 7%; width: 7%;">
+                                <% } else {%>
+                                  <% console.log("No cse_image found for this item");%>
+                                    <% }%>
+                            </div>
+                            <%}%>
+                            <form action="/home/search" method="post">
+                              <div class="pages">
+                                <ul class="page-link">
+                                  <li>1</li>
+                                  <li>2</li>
+                                  <li>3</li>
+                                  <li>4</li>
+                                  <li>NEXT...</li>
+                                </ul>
+                              </div>
+                            </form>
         </div>
         <div class="col-sm-4">
 
@@ -210,34 +221,22 @@
             <h5 class="related">Searches related to your search</h5>
             <div class="search-link">
               <div class="form-search">
-                <div class="search-box">
-                  <div class="sug form-control me-2">What is facebook?
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                      class="bi bi-search" viewBox="0 0 16 16">
-                      <path
-                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
-                    </svg>
-                  </div>
-                </div>
-                <div class="search-box">
-                  <div class="sug form-control me-2">Who invented facebook?
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                      class="bi bi-search" viewBox="0 0 16 16">
-                      <path
-                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
-                    </svg>
-                  </div>
-                </div>
-                <div class="search-box">
-                  <div class="sug form-control me-2">When was facebook invented?
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                      class="bi bi-search" viewBox="0 0 16 16">
-                      <path
-                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
-                    </svg>
-                  </div>
-                  <a class="More" href="#">More..</a>
-                </div>
+                <% for (suggestion of suggestions) {%>
+                  <form action="/home/search" method="POST">
+                    <div class="search-box">
+                      <div class="sug me-2"><button class="form-control">
+                          <%=suggestion%>
+                        </button>
+                        <input type="hidden" value="<%=suggestion%>" name="search[q]">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                          class="bi bi-search" viewBox="0 0 16 16">
+                          <path
+                            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                        </svg>
+                      </div>
+                    </div>
+                  </form>
+                  <%}%>
               </div>
             </div>
           </div>
