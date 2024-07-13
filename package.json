@@ -4,7 +4,7 @@
   "description": "Skynet Search Engine development an Integration of Search Engine format with AI intergration fit feature fully loaded in it",
   "main": "index.js",
   "scripts": {
-    "test":  "node index.js"
+    "test": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -29,6 +29,7 @@
     "express": "^4.18.3",
     "express-session": "^1.18.0",
     "file-type": "^19.0.0",
+    "google-trends-api": "^4.9.2",
     "https": "^1.0.0",
     "method-override": "^3.0.0",
     "mime": "^4.0.1",

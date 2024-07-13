@@ -52,11 +52,18 @@ body {
   object-fit: cover;
 }
 
-.card__image img:hover {
-  transition: transform .5s; /* Animation */
-  width: 110%;
-  height: 110%;
+.geeks {
+  overflow: hidden;
   margin: 0 auto;
+}
+
+.geeks img {
+  width: 100%;
+  transition: 0.5s all ease-in-out;
+}
+
+.geeks:hover img {
+  transform: scale(1.5);
 }
 
 .card--2x {

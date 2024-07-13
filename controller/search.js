@@ -2,21 +2,38 @@ const searchQ = require('../dbmodels/queryDb.js');
 const { AIData } = require('../dbmodels/aiDb.js');
 const { GoogleGenerativeAI } = require("@google/generative-ai");
 const axios = require('axios');
+const googleTrends = require('google-trends-api');
+
+async function getTrendingTopics() {
+    const apiKey = process.env.T_API_KEY;
+    const url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=${apiKey}`;
+
+    try {
+        const response = await axios.get(url);
+        const articles = response.data.articles;
+
+        // console.log(`Trending Topics: ${articles}`);
+        return articles;
+    } catch (error) {
+        console.error('Error fetching trending topics:', error);
+    }
+}
+
 
 // Replace with your actual API key and Search Engine ID
 
 async function searchRelatedQueries(query) {
     const url = `http://suggestqueries.google.com/complete/search?client=firefox&q=${encodeURIComponent(query)}`;
 
-  try {
-    const response = await axios.get(url);
-    const suggestions = response.data[1]; // The second element of the response contains the suggestions
+    try {
+        const response = await axios.get(url);
+        const suggestions = response.data[1]; // The second element of the response contains the suggestions
 
-    console.log(suggestions);
-    return suggestions;
-  } catch (error) {
-    console.error('Error fetching search suggestions:');
-  }
+        console.log(suggestions);
+        return suggestions;
+    } catch (error) {
+        console.error('Error fetching search suggestions:');
+    }
 }
 
 // Example usage
@@ -43,8 +60,12 @@ async function getreq(q) {
     }
 }
 
-module.exports.index = (req, res) => {
-    res.render('main/index.ejs');
+module.exports.index = async (req, res) => {
+    const trends = await getTrendingTopics();
+    for(trend of trends){
+        console.log(trend.title);
+    }
+    res.render('main/index.ejs', { trends });
 };
 
 module.exports.searchIndex = async (req, res) => {
@@ -67,7 +88,7 @@ module.exports.searchIndex = async (req, res) => {
             const prompt = q;
             let cardImage = await getreq(q);
             // res.send(see);
-            res.render('main/searchresult.ejs', { cardImage,suggestions,see, q });
+            res.render('main/searchresult.ejs', { cardImage, suggestions, see, q });
             // Update the database with fresh data from API for future searches
             const apiKey = process.env.SEARCH_API_KEY;
             const cx = process.env.SEARCH_ID;
@@ -98,7 +119,7 @@ module.exports.searchIndex = async (req, res) => {
         let cardImage = await getreq(q);
         await see.save();
         console.log("Condition 2 Triggered");
-        res.render('main/searchresult.ejs', { cardImage,suggestions,see, q });
+        res.render('main/searchresult.ejs', { cardImage, suggestions, see, q });
     }
 
 };

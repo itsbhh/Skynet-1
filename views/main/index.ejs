@@ -176,14 +176,9 @@
     <div class="trending-topics  show" id="trendingTopics">
         <h2>Trending Topics</h2>
         <ul class="trending-topic-list">
-            <li class="trending-topic-item">Covid-19 JN.1 Variant Cases</li>
-            <li class="trending-topic-item">KKR vs RCB Live</li>
-            <li class="trending-topic-item">Travis Head IPL 2024</li>
-            <li class="trending-topic-item">Current Released Movies</li>
-            <li class="trending-topic-item">Ram Mandir Ayodhya</li>
-            <li class="trending-topic-item">Economic growth of India</li>
-            <li class="trending-topic-item">All of us are dead season2</li>
-            <li class="trending-topic-item">MSD Raina Friendship</li>
+            <% for (trend of trends) {%>
+            <li class="trending-topic-item"><%=trend.title%></li>
+            <%}%>
         </ul>
     </div>
 
