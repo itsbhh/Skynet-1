@@ -126,7 +126,9 @@
  }
 
  .iconss {
-   margin-right: 5px;
+   margin-right: 10px !important;
+   font-size: 20px !important;
+   margin-top: 10px;
  }
 
  .url-input {
@@ -157,7 +159,6 @@
    left: 0;
    right: 0;
    z-index: 100;
-   /* Add necessary styles */
  }
 
  .dropdown-section {
@@ -176,7 +177,7 @@
 
  .header {
    padding-bottom: 30px;
-   /* Adjust padding as needed */
+   padding-right: 20px !important;
  }
 
  /* Adjust search bar width */
@@ -210,21 +211,7 @@
    color: #fff;
  }
 
- /* Media query for responsive layout */
- @media (max-width: 768px) {
-
-   /* Adjust styles for smaller screens */
-   .skynet-dropdown {
-     width: 150px;
-     /* Adjust width for smaller screens */
-   }
-
-   .search-bar input {
-     width: calc(100% - 30px);
-     /* Adjust width for smaller screens */
-   }
- }
-
+ 
  /* Navbar styles */
  .navai {
    width: 40px !important;
@@ -845,15 +832,6 @@
      margin-bottom: 20px;
    }
 
-   @media (max-width: 768px) {
-     .default-text {
-       margin-top: 30px;
-     }
-
-     .default-text img {
-       width: 80px;
-     }
-   }
 
    /* Pinned icon styles */
    .pinned-icon {
@@ -1190,3 +1168,8 @@
  .rec-chats i:hover {
    cursor: pointer;
  }
+ 
+ .moon-icon:hover{
+  cursor: pointer;
+ }
+ 
