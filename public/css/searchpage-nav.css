@@ -267,9 +267,6 @@
         overflow-x: hidden;
     }
 
-    .navbar-nav {
-       
-    }
 
     .navbar-brand {
       margin-top: -3%;
@@ -283,6 +280,10 @@
       margin-left: -18% !important;
       width: 150% !important;
       height: 50% !important;
+    }
+    a{
+      text-decoration: none !important;
+      color:inherit !important;
     }
     .s-box{
       width: 100% !important;
@@ -302,11 +303,11 @@
     }
     .fa-user{
       margin-top:-25%; 
-      margin-right: -16% !important;
+      margin-right: -6% !important;
     }
     .language{
       margin-top:1%;
-      margin-right: -10% !important;
+      margin-right: -65% !important;
     }
     .navbar-nav.show {
         display: flex; /* Show navigation links */

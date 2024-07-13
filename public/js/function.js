@@ -178,7 +178,7 @@ document.addEventListener('DOMContentLoaded', function () {
         menu.style.display = 'none';
     });
 });
-function toggleMen() {
+/*function toggleMen() {
     console.log('Toggle menu clicked');
     let menuDropdown = document.getElementById('menuDropdown');
     if (menuDropdown) {
@@ -227,3 +227,4 @@ document.addEventListener('DOMContentLoaded', function () {
         menu.style.display = 'none';
     });
 });
+*/
