@@ -36,8 +36,15 @@ function formatText(text) {
 
 
 
-async function run(input, _id) {
+async function run(file, input, _id) {
     // For text-only input, use the gemini-pro model
+    let askAI
+    if (file!=null){
+        askAI = `${input} from \n${file}`;
+    }
+    else{
+        askAI = `${input}`
+    }
     const model = genAI.getGenerativeModel({ model: "gemini-pro" });
     let chatHs;
 
@@ -70,7 +77,7 @@ async function run(input, _id) {
         },
     });
 
-    const msg = input;
+    const msg = askAI;
     const result = await chat.sendMessage(msg);
     const response = await result.response;
     const text = formatText(response.text());

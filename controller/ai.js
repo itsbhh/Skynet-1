@@ -22,40 +22,6 @@ function fileToGenerativePart(path, mimeType) {
     };
 }
 
-function formatText(text) {
-    // Bold text: **text** or __text__
-    text = text.replace(/\*\*(.*?)\*\*|__(.*?)__/g, '<strong>$1$2</strong>');
-    // Italic text: *text* or _text_
-    text = text.replace(/\* (.*?)\* |_(.*?)_/g, '<em>$1$2</em>');
-    // Strikethrough text: ~~text~~
-    text = text.replace(/~~(.*?)~~/g, '<s>$1</s>');
-    // Monospace text: `text`
-    text = text.replace(/`(.*?)`/g, '<code>$1</code>');
-    // Blockquotes: > text
-    text = text.replace(/^> (.*)/gm, '<blockquote>$1</blockquote>');
-    // Ordered lists: 1. text
-    text = text.replace(/^(\d+\..*?$)/gm, '<ol>$1</ol>');
-    // Unordered lists: - text or + text or * text
-    text = text.replace(/^(-|\+|\*).*?$/gm, '<ul>$&</ul>');
-    // Horizontal rules: ---
-    text = text.replace(/^\s*---\s*$/gm, '<hr>');
-    // Links: [text](URL)
-    text = text.replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2">$1</a>');
-    // Images: ![alt text](image URL)
-    text = text.replace(/!\[(.*?)\]\((.*?)\)/g, '<img src="$2" alt="$1">');
-    // Code blocks: ```
-    text = text.replace(/```([\s\S]*?)```/g, '<pre>$1</pre>');
-    // Inline code: `text`
-    text = text.replace(/`(.*?)`/g, '<code>$1</code>');
-    // Tables: | Header 1 | Header 2 |
-    text = text.replace(/^\|(.*?)\|$/gm, '<table><tr>$1</tr></table>');
-    // Adjust spacing to remove overspacing
-    text = text.replace(/\n\s*\n/g, '\n');
-    // Wrap text in <p> tags to preserve whitespace and line breaks
-    text = '<p>' + text.replace(/\n/g, '</p><p>') + '</p>';
-    return text;
-}
-
 function getCurrentTime() {
     const now = new Date();
     const hours = now.getHours();
@@ -103,7 +69,7 @@ module.exports.answer = async (req, res) => {
             return res.send(formatText(text));
         } else if (mimeType && mimeType === 'application/pdf') {
             // Handle PDF file
-            const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+            console.log('PDF recieved')
             let url = req.file.path;
             let filename = req.file.filename;
             const pdfPath = path.join(__dirname, '..', 'uploads', filename);
@@ -116,18 +82,12 @@ module.exports.answer = async (req, res) => {
                     filename: filename
                 }
             });
-            const prompt = `${input} from \n${pdfData.text}`;
-            const result = await model.generateContentStream(prompt);
-            let text = '';
-            for await (const chunk of result.stream) {
-                const chunkText = chunk.text();
-                console.log(chunkText);
-                text += chunkText;
-            }
-            console.log(aiData);
+            const response = await run(pdfData.text, input, _id);
+            let text = response.text;
+            const chatHs = response.chatHs;
             await aiData.save();
             console.log(text);
-            return res.send(formatText(text));
+            return res.render("main/skynetAI.ejs", { text, input, chatHs, mime, time });
         } else if (mimeType && (mimeType === 'application/vnd.ms-excel' || mimeType === 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')) {
             const analysisResult = await analyzeExcel(req.file.path);
 
@@ -148,7 +108,7 @@ module.exports.answer = async (req, res) => {
             return res.status(400).send("Unsupported file type");
         }
     } else {
-        const response = await run(input, _id);
+        const response = await run(file = null, input, _id);
         let text = response.text;
         const chatHs = response.chatHs;
         res.render("main/skynetAI.ejs", { text, input, chatHs, mime, time });
