@@ -22,11 +22,13 @@ body {
 }
 
 .grid-container {
+  height: 750px;
   margin-top: 48px;
+  border-radius: 20px;
   display: grid;
   grid-template-columns: 2fr 1fr;
   grid-template-rows: 1fr 1fr;
-  grid-gap: 1.1312rem;
+  grid-gap: 0.002rem;
   justify-content: center;
   max-width: 75em;
 }
@@ -48,6 +50,13 @@ body {
   width: 100%;
   border-radius: 20px !important;
   object-fit: cover;
+}
+
+.card__image img:hover {
+  transition: transform .5s; /* Animation */
+  width: 110%;
+  height: 110%;
+  margin: 0 auto;
 }
 
 .card--2x {
