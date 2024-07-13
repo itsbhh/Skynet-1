@@ -90,7 +90,7 @@ app.get('/test', (req, res) => {
 })
 
 app.get("/about", (req, res) => {
-    res.render("basic/journey.ejs");
+    res.render("Basic/journey.ejs");
 });
 
 // app.get('/image', async (req, res) => {
@@ -100,10 +100,10 @@ app.get("/about", (req, res) => {
 // });
 
 app.get("/contact", (req, res) => {
-    res.render("basic/contact.ejs");
+    res.render("Basic/contact.ejs");
 });
 app.get("/company", (req, res) => {
-    res.render("basic/companypage.ejs");
+    res.render("Basic/companypage.ejs");
 });
 
 app.post("/feedback", async (req, res) => {
