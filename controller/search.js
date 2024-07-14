@@ -62,20 +62,19 @@ async function getreq(q) {
 
 module.exports.index = async (req, res) => {
     const trends = await getTrendingTopics();
-    for(trend of trends){
-        console.log(trend.title);
-    }
     res.render('main/index.ejs', { trends });
 };
 
 module.exports.searchIndex = async (req, res) => {
     let { q } = req.body.search;
+    console.log(q);
     if (req.file) {
         let url = req.file.path;
         let filename = req.file.filename;
         console.log(url, filename);
     }
     q = q.toLowerCase();
+    console.log(q);
     let see = await searchQ.findOne({ "result.query": q }); // Use findOne instead of find
     console.log(see);
     if (see && see.result && see.result.query) {

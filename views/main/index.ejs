@@ -177,7 +177,10 @@
         <h2>Trending Topics</h2>
         <ul class="trending-topic-list">
             <% trends.slice(0, 5).forEach(trend => { %>
-                <li class="trending-topic-item"><%= trend.title.split(' ').slice(0, 7).join(' ') %></li>
+                <form method="post" action="/home/search">
+                <input type="hidden" value="<%=trend.title%>" name="search[q]">
+                <li class="trending-topic-item"><button type="submit" style="background-color: transparent; border: transparent;"><%= trend.title.split(' ').slice(0, 7).join(' ') %></button></li>
+                </form>
             <% }); %>
         </ul>
     </div>
