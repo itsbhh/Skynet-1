@@ -1,7 +1,13 @@
 * {
-    margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+.contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
 }
 
 body {
@@ -56,12 +62,17 @@ p {
 input[type="text"],
 input[type="email"],
 textarea {
-    width: 90%;
+    width: 100%;
     padding: 10px;
     border: 1px solid #000000;
-    border-radius: 20px;
+    border-radius: 20px !important;
     height: 40px;
     margin-top: 10px;
+    resize: none !important;
+    overflow: hidden !important;
+}
+textarea{
+    resize: none !important;
 }
 button {
     padding: 10px 20px;
@@ -70,7 +81,7 @@ button {
     border: none;
     border-radius: 28px;
     cursor: pointer;
-    width: 90%;
+    width: 100%;
     height: 50px;
     margin-top: 10px;
 }
@@ -79,10 +90,10 @@ button:hover {
     background-color: #555;
 }
 
-@media screen and (max-width: 768px) {
-    .contact-form {
-        flex-direction: column; 
-        width: 80%; 
+@media (max-width: 768px) {
+    .contact {
+        align-items: flex-start !important;
+        padding-top: 30% !important;
     }
 
     .contact-form img {
