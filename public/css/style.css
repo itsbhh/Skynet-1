@@ -454,8 +454,8 @@ footer {
   z-index: 1000;
   /* Ensure it's on top */
   color: white;
-  height: 265px;
-  width: 200px;
+  height: 285px;
+  width: 250px;
   transition: opacity 5s ease 5s;
 }
 
@@ -1121,6 +1121,7 @@ footer {
   .trending-topics {
     background-color: #333;
     color: #fff;
+    overflow:hidden !important;
   }
 
   .sidebar {

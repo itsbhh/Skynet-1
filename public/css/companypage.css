@@ -1,7 +1,12 @@
 *{
-    margin: 0;
+    
     padding: 0;
 }
+.company {
+    height: 100vh !important;
+    padding: 20px;
+}
+
 .heading{
     justify-content: center;
     align-items: center;
@@ -42,4 +47,10 @@ h3{
 }
 .card-title{
     color: black;
+}
+@media (max-width: 768px) {
+    .company {
+        padding-top: 50% !important;
+        margin-top: 50% !important;
+    }
 }

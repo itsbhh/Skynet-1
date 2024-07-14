@@ -173,15 +173,14 @@
     </div>
     </div>
 
-    <div class="trending-topics  show" id="trendingTopics">
+    <div class="trending-topics show" id="trendingTopics">
         <h2>Trending Topics</h2>
         <ul class="trending-topic-list">
-            <% for (trend of trends) {%>
-            <li class="trending-topic-item"><%=trend.title%></li>
-            <%}%>
+            <% trends.slice(0, 5).forEach(trend => { %>
+                <li class="trending-topic-item"><%= trend.title.split(' ').slice(0, 7).join(' ') %></li>
+            <% }); %>
         </ul>
     </div>
-
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
@@ -316,7 +315,7 @@
                     dropdownArrow.style.marginTop = '-8px';
                 } else {
                     menu.style.display = 'block';
-                    menu.style.height = '265px';
+                    menu.style.height = '285px';
                     isOpen = false;
                     console.log('Menu closed.');
                 }
