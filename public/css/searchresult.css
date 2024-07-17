@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans|Sacramento");
 
 html {
-  font-size: 14.5px;
+ width:100% !important; 
 }
 body {
   font-family: "Open Sans", sans-serif;
@@ -9,6 +9,7 @@ body {
   background-color: #ffffff !important;
   color: #404646;
   margin: 0;
+  font-size: 14.5px;
   padding: 0;
 }
 
@@ -291,8 +292,8 @@ body {
 }
 
 .bi-search {
-  margin-left: 95%;
-  margin-top: -17%;
+  margin-left: 89%;
+  margin-top: -15%;
 }
 
 .search-box {
@@ -506,5 +507,158 @@ body {
 
 
 
-/* RESPONSIVE FOOTER  */
+@media screen and (min-width: 1100px) and (max-width: 1300px) {
+  body{
+    overflow-x: hidden !important;
+  }
+  .main-container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+  }
+
+  .grid-container {
+    height: 20%;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-gap: 1rem;
+  }
+
+  .card--2x {
+    grid-row: auto;
+    grid-column: auto;
+  }
+
+  .demo img {
+    margin-left: auto;
+    margin-top: auto;
+  }
+
+  .page-link {
+    margin-left: 0;
+    justify-content: center;
+  }
+
+  .chat-container {
+    margin-left: 15%;
+    margin-top: 15%;
+    width: 90%;
+  }
+  .search-related{
+    margin-top: 25% !important;
+  }
+  .bi-search{
+    margin-top: -22% !important; 
+    margin-left: 19% !important;
+    color:  gray !important;
+  }
+}
+
+@media (min-width: 1100px) and (max-width: 1300px) {
+  .pt5 {
+    height: 35%; /* Adjust height for responsiveness */
+    width: 141.7vh;
+    overflow-x: hidden !important;
+  }
+
+  .mt-3 a {
+    font-size: 14px; /* Adjust font size for responsiveness */
+  }
+
+  .col-md-3 p {
+    margin-left: 4% !important; /* Adjust margin for responsiveness */
+  }
+
+  .col-md-3 img {
+    margin-top: -5%; /* Adjust margin for responsiveness */
+    margin-left: 4% !important; /* Adjust margin for responsiveness */
+  }
+
+  .f-link {
+    margin-top: 18% !important; /* Adjust margin for responsiveness */
+  }
+  .fa-twitter{
+    display: none !important;
+  }
+}
+@media  (max-width:1100px){
+  .fa-twitter{
+    display: none !important;
+  }
+}
+
+@media  (max-width:800px){
+  .pt5{
+    display: none !important;
+  }
+}
+
+@media screen and (min-width: 900px) and (max-width: 1100px){
+  .chat-container{
+    width: 90% !important;
+  }
+  .search-related{
+    margin-top: 25% !important;
+  }
+  .bi-search{
+    margin-top: -22% !important; 
+    margin-left: 19% !important;
+    color:  gray !important;
+  }
+}
+@media screen and (min-width: 560px) and (max-width:900px){
+  .chat-container{
+    display:none!important;
+  }
+}
+
+@media (max-width:990px){
+  .search-related{
+    margin-top: 30% !important;
+  }
+  .bi-search{
+    margin-top: -30% !important; 
+    margin-left: 25% !important;
+    color:  gray !important;
+  }
+}
+@media (max-width:900px){
+  .search-related{
+    margin-top: 50% !important;
+  }
+  .bi-search{
+    margin-top: -30% !important; 
+    margin-left: 25% !important;
+    color:  gray !important;
+  }
+  .pt5{
+    margin-left: 5% !important;
+  }
+}
+@media(max-width:770px){
+  .bi-search{
+    margin-top: -45% !important; 
+    margin-left: 37% !important;
+    color:  gray !important;
+  }
+}
+@media(max-width:580px)  {
+  .col-sm-8{
+     width: 50% !important;
+  }
+  .col-sm-4{
+    width: 50% !important;
+  }
+  .search-heading{
+    margin-left: 6% !important;
+  }
+  .demo{
+    margin-left: 8% !important;
+  }
+  .bi-search{
+    margin-top: -15% !important; 
+    margin-left: 10% !important;
+    color:  gray !important;
+  }
+}
 

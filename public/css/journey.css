@@ -74,9 +74,106 @@ h4{
     color: rgb(91, 87, 87);
   }
   .split-background {
-    height: 100vh;
+    height: 85vh;
     background: linear-gradient(to bottom, #ffffff 35%, #e9e9e9 45%);
   }
   h5{
     color: rgb(87, 86, 86) !important;
   }
+
+  @media (min-width: 1100px) and (max-width: 1300px) {
+    .card {
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    .row-cols-md-3 .col {
+        flex: 0 0 33.333%;
+        max-width: 33.333%;
+    }
+    .row-cols-1 .col {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .row {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    .card-img-center {
+        width: 100%;
+        max-width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .card-body {
+        text-align: center;
+    }
+    .card-title {
+        margin-left: 0;
+    }
+    .card-text {
+        margin-left: 0;
+    }
+    .center-image img {
+        width: 100%;
+        max-width: 600px;
+        height: auto;
+    }
+}
+@media (min-width: 800px) and (max-width: 1100px) {
+    .card {
+        margin-left: auto !important;
+        margin-right: auto !important;
+        margin-bottom: 20px;
+    }
+    .row-cols-md-3 .col {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    .row-cols-1 .col {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .row {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    .card-img-center {
+        width: 100%;
+        max-width: 250px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .card-body {
+        text-align: center;
+    }
+    .card-title {
+        margin-left: 0;
+    }
+    .card-text {
+        margin-left: 0;
+    }
+    .center-image img {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+    }
+    .sec{
+        margin-top: -20%;
+    }
+}
+@media (min-width: 600px) and (max-width: 800px) {
+    .row-cols-md-3 .col {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    .row-cols-1 .col {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .card-img-center {
+        max-width: 200px;
+    }
+    .center-image img {
+        max-width: 300px;
+    }
+}
