@@ -224,7 +224,7 @@
                   <form action="/home/search" method="POST">
                     <div class="search-box">
                       <div class="sug me-2"><button class="form-control">
-                          <%=suggestion%>
+                        <%= suggestion.split(' ').slice(0, 5).join(' ') %>
                         </button>
                         <input type="hidden" value="<%=suggestion%>" name="search[q]">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"

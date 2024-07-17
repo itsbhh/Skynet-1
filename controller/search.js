@@ -38,7 +38,22 @@ async function searchRelatedQueries(query) {
 
 // Example usage
 
+async function imageGetter(see,q) {
+    let cardImage = null;
+    if (see && see.result && see.result.data && see.result.data.items && see.result.data.items.length > 0) {
+        let yeah = false;
+        see.result.data.items.forEach(function (sees) {
+            if (sees.pagemap.hcard) {
+                yeah = true;
+            }
+        });
+        if (yeah) {
+            console.log('Card Images Added');
+            return cardImage = await getreq(q);
+        }
 
+    }
+}
 
 
 async function getreq(q) {
@@ -85,7 +100,7 @@ module.exports.searchIndex = async (req, res) => {
             let suggestions = await searchRelatedQueries(q);
             //AI Code to be written in searchResult.ejs
             const prompt = q;
-            let cardImage = await getreq(q);
+            let cardImage = await imageGetter(see,q);          
             // res.send(see);
             res.render('main/searchresult.ejs', { cardImage, suggestions, see, q });
             // Update the database with fresh data from API for future searches
@@ -115,7 +130,7 @@ module.exports.searchIndex = async (req, res) => {
         const ros = searchResponse.data;
         see.result.data = ros;
         let suggestions = await searchRelatedQueries(q);
-        let cardImage = await getreq(q);
+        let cardImage = await imageGetter(see,q);  
         await see.save();
         console.log("Condition 2 Triggered");
         res.render('main/searchresult.ejs', { cardImage, suggestions, see, q });
