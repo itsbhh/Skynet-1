@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 /* Basic reset */
 * {
   margin: 0;
@@ -41,6 +42,1183 @@ body {
 }
 
 .navai i:hover {
+=======
+ /* Basic reset */
+ * {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+ }
+
+ body {
+   font-family: 'Arial', sans-serif;
+   background: #f9f9f9;
+ }
+
+ .skynet-container {
+   position: relative;
+ }
+   a{
+    text-decoration: none !important;
+    color: inherit !important;
+   }
+ .dropdown-cont {
+   display: none;
+   position: absolute;
+   top: 100%;
+   left: 0;
+   margin: 0;
+   z-index: 1000;
+   width: 220px;
+   padding: 0%;
+   /* Ensure dropdown stays on top */
+ }
+
+ .dropdown-cont.show-dropdown {
+   display: block;
+ }
+
+ .username-container-shifted {
+   width: 75%;
+   transition: margin-left 0.3s ease-in-out;
+ }
+
+ .search-shifted {
+   margin-left: 30px;
+   transition: margin-left 0.3s ease-in-out;
+ }
+
+ .navai i:hover {
+   cursor: pointer;
+ }
+
+ .navai img:hover {
+   cursor: pointer;
+ }
+
+
+ .hidden {
+   display: none;
+ }
+
+ .contain {
+   height: 20px;
+   width: 650px;
+   display: flex;
+   align-items: center;
+   margin: 0;
+   max-height: 200px;
+ }
+
+ .textarea .text-space:focus {
+   outline: none !important;
+ }
+
+ .text-space {
+   flex: 1 !important;
+   margin-right: 10px !important;
+   resize: none !important;
+   outline: none !important;
+   border: none !important;
+   margin-top: 10px !important;
+   max-height: 44px !important;
+   overflow-y: auto !important;
+   margin-left: 10px;
+   padding: 10px !important;
+   box-sizing: border-box !important;
+   scrollbar-width: thin !important;
+   scrollbar-color: #888 #f1f1f1 !important;
+   background-color: #eceaea;
+
+ }
+
+ .textarea {
+   height: 20px;
+ }
+
+ :root {
+   --scrollbar-width: 10px !important;
+ }
+
+ .text-space::-webkit-scrollbar {
+   width: var(--scrollbar-width) !important;
+ }
+
+ .text-space::-webkit-scrollbar-track {
+   background: #f1f1f1;
+ }
+
+ .text-space::-webkit-scrollbar-thumb {
+   background: #888 !important;
+   border-radius: 5px !important;
+ }
+
+ .text-space::-webkit-scrollbar-thumb:hover {
+   background: #555 !important;
+ }
+
+ .text-space {
+   scrollbar-width: thin;
+   scrollbar-color: #888 #f1f1f1;
+ }
+
+ .text-space::-webkit-scrollbar-corner {
+   background: transparent !important;
+ }
+
+
+
+ .icons-container {
+   display: flex;
+   align-items: center;
+ }
+
+ .iconss {
+   margin-right: 10px !important;
+   font-size: 20px !important;
+   margin-top: 10px;
+ }
+
+ .url-input {
+   display: none;
+   flex-direction: row;
+   align-items: center;
+   background-color: #eceaea;
+ }
+
+ .url-space input {
+   flex: 1;
+   margin-left: 10px;
+   background-color: #eceaea;
+   border: none !important;
+ }
+
+ .url-space input:focus {
+   outline: none !important;
+ }
+
+ .image-container img:hover {
+   cursor: pointer;
+ }
+
+ .header {
+   position: fixed;
+   top: 0;
+   left: 0;
+   right: 0;
+   z-index: 100;
+ }
+
+ .dropdown-section {
+   margin: 0 !important;
+ }
+
+ .username-container {
+   transition: transform 0.3s ease;
+ }
+
+ .username-container {
+   position: fixed;
+   top: 0px;
+   left: 0px;
+ }
+
+ .header {
+   padding-bottom: 30px;
+   padding-right: 20px !important;
+ }
+
+ /* Adjust search bar width */
+ .search-bar input {
+   width: calc(100% - 40px);
+   /* Adjust width based on the total header width */
+ }
+
+ /* Updated Skynet AI icon styles */
+ .dropdown-text {
+   cursor: pointer;
+   position: relative;
+ }
+
+ .dropdown-text .fa-angle-down {
+   transition: transform 0.3s ease;
+ }
+
+ .dropdown-text.rotate .fa-angle-down {
+   transform: rotate(180deg);
+ }
+
+ /* Dark mode adjustments */
+ .dark-mode .dropdown-cont {
+   background-color: #333;
+   color: #fff;
+   border-color: #666;
+ }
+
+ .dark-mode .dropdown-text .fa-angle-down {
+   color: #fff;
+ }
+
+ 
+ /* Navbar styles */
+ .navai {
+   width: 40px !important;
+   /* Set navbar width */
+   background-color: #000000 !important;
+   height: 100vh !important;
+   display: flex !important;
+   flex-direction: column !important;
+   align-items: center !important;
+   padding-top: 5px !important;
+   position: fixed !important;
+   left: 0 !important;
+   top: 0 !important;
+ }
+
+ .icon {
+   width: 40px !important;
+   height: 40px !important;
+   margin: 10px 10px !important;
+   display: flex !important;
+   justify-content: center !important;
+   align-items: center !important;
+   border-radius: 2px !important;
+ }
+
+ .ic img {
+   filter: invert(100%);
+ }
+
+ /* Skynet AI interface styles */
+ .skynet-container {
+   position: fixed;
+   margin-left: 2.9%;
+   width: 97%;
+
+ }
+
+ .aifooter i:hover {
+   cursor: pointer;
+ }
+
+ /* Header styles */
+ .header {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   background-color: #d3d3d3;
+   color: black;
+   padding: 10px;
+   position: relative;
+   /* Make the header a positioning context */
+ }
+
+ /* Search bar styles */
+ .search-bar {
+   display: flex;
+   position: relative;
+   align-items: center;
+ }
+
+ .search-bar input {
+   width: 1100px;
+   padding: 5px 30px 5px 40px;
+   border: none;
+   outline: none;
+ }
+
+ .search-bar input::placeholder {
+   color: #d4d4d4;
+   font-size: 12px;
+ }
+
+ .search-bar .fa-magnifying-glass {
+   position: absolute;
+   top: 50%;
+   left: 10px;
+   transform: translateY(-50%);
+   color: black;
+ }
+
+ /* Username container styles */
+ .username-container {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 2px 10px;
+   border-bottom: 3px solid #d3d3d3;
+   position: relative;
+   /* Make the username container a positioning context */
+ }
+
+ .show-dropdown .username-container {
+   margin-right: 30px;
+
+   /* Adjust margin when dropdown is open */
+ }
+
+
+ .icons-right {
+   display: flex;
+   align-items: center;
+   /* Align icons vertically */
+ }
+
+ .image-container img {
+   border-radius: 50%;
+   margin-right: 15px;
+   margin-top: 5px;
+ }
+
+ .icon {
+   width: 24px;
+   height: 24px;
+   margin-right: 20px;
+ }
+
+ /* Pinned icon styles */
+ .pinned-icon {
+   margin-left: auto;
+   /* Align pinned icon to the right */
+   margin-right: 10px;
+   /* Adjust this value as needed */
+ }
+
+ .text-open {
+   width: 78%;
+ }
+
+ .pinned-icon-open {
+   margin-right: 22%;
+   /* Adjust this value as needed */
+ }
+
+ .chatbox {
+   height: calc(104vh - 200px);
+   /* Adjust the height as needed */
+   overflow-y: auto;
+   /* Enable vertical scrolling */
+ }
+
+ /* Customize scrollbar */
+ .chatbox::-webkit-scrollbar {
+   width: 10px;
+   /* Set the width of the scrollbar */
+ }
+
+ .chatbox::-webkit-scrollbar-track {
+   background: #f1f1f1;
+   /* Set the background color of the scrollbar track */
+ }
+
+ .chatbox::-webkit-scrollbar-thumb {
+   background: #888;
+   /* Set the color of the scrollbar thumb */
+   border-radius: 5px;
+   /* Add border radius to the scrollbar thumb */
+ }
+
+ .chatbox::-webkit-scrollbar-thumb:hover {
+   background: #555;
+   /* Change the color of the scrollbar thumb on hover */
+ }
+
+ /* Firefox scrollbar */
+ .chatbox {
+   scrollbar-width: thin;
+   scrollbar-color: #888 #f1f1f1;
+ }
+
+ .chatbox::-webkit-scrollbar-corner {
+   background: transparent;
+   /* Hide the scrollbar corner */
+ }
+
+ /* Chat area styles */
+ .chat-area {
+   display: flex;
+   width: 100%;
+   justify-content: center !important;
+   align-items: center;
+   flex-direction: column;
+   /* Center chat messages horizontally */
+
+ }
+
+
+ .chat-message {
+   width: 1000px;
+   /* Set the width of the chat message */
+   display: flex;
+   flex-direction: column;
+   margin-bottom: 1rem;
+   margin-top: 1rem;
+ }
+
+ .chat-message .timestamp,
+ .time {
+   color: #5f5e5e;
+ }
+
+ .chat-message .text {
+   font-size: 1rem;
+   color: #0d0d0d;
+ }
+
+ .text-space:focus {
+   outline: none !important;
+ }
+
+ .url-space:focus {
+   outline: none !important;
+ }
+
+ .aifooter {
+   margin-left: 25%;
+   width: 50%;
+   background-color: #eceaea;
+   border-radius: 28px;
+   padding: 10px;
+   position: absolute;
+   bottom: 20px;
+ }
+
+ .indexAI{
+  bottom: -30px !important;
+ }
+
+ .chat-footer {
+   display: flex;
+   justify-content: center;
+   flex-direction: row;
+ }
+
+ .input-group {
+   margin-bottom: 10px;
+ }
+
+ .chat-footer .iconss {
+   font-size: 12px;
+   padding-left: 10px;
+   padding-top: 0;
+   padding-bottom: 0;
+ }
+
+
+ .send-btn {
+   background-color: transparent;
+   position: relative;
+   padding-top: 5px;
+   padding-bottom: 5px;
+   border: none;
+   border-radius: 25px;
+
+ }
+
+
+ .iconss i {
+   margin-right: 5px;
+   /* Add spacing between icons */
+   color: #000;
+   /* Change icon color */
+ }
+
+ .send-btn i {
+   color: #000;
+   /* Change button icon color */
+ }
+
+ .send-btn:hover {
+   cursor: pointer;
+   /* Change button background color on hover */
+ }
+
+ .iconsss {
+   margin-bottom: -3px;
+   width: 30px;
+   height: 30px;
+   display: inline-block;
+   background-image: url("/assets/language.png");
+   background-size: cover;
+   background-position: center;
+   filter: invert(5%);
+ }
+
+ .fa-angle-up {
+   display: block;
+   position: fixed;
+   margin-left: 120px !important;
+   color: #000;
+
+ }
+
+ .rotate {
+   transform: rotate(180deg);
+ }
+
+ .dropdown {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   flex-direction: row;
+ }
+
+ .image-container {
+   position: relative;
+ }
+
+ .dropdown-content {
+   display: none;
+   position: fixed;
+   background-color: #fff;
+   min-width: 150px;
+   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+   z-index: 1;
+   right: 0px;
+   /* Position the dropdown relative to the image */
+   top: 120px;
+ }
+
+ /* Show the dropdown content when hovering over the image container */
+ .dropdown-content {
+   display: none;
+ }
+
+ .show-dropdown {
+   display: block;
+ }
+
+ .fade-out-image {
+   opacity: 0;
+   /* Adjust opacity as needed */
+ }
+
+ /* Main container */
+ .profile-container {
+   background-color: #fff;
+   color: black;
+   padding: 10px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   border-left: 3px solid #d3d3d3;
+   width: 300px;
+   height: 670px;
+   box-sizing: border-box;
+ }
+
+ .avatar {
+   padding: 0%;
+ }
+
+ .avatar img {
+   width: 150px;
+   height: 150px;
+   border-radius: 50%;
+   box-shadow: 50px 24px 61px -21px rgba(0, 0, 0, 0.45), 25px 29px 20px -20px rgba(0, 0, 0, 0.45);
+   margin: 0;
+
+ }
+
+
+ .status {
+   display: flex;
+   align-items: center;
+   font-size: 15px;
+   color: #727070;
+   margin-top: 0%;
+   padding-top: 0%;
+   margin-right: 10px;
+ }
+
+ .status-dot {
+   width: 10px;
+   height: 10px;
+   background-color: black;
+   /* Black dot */
+   border-radius: 50%;
+   margin-right: 5px;
+ }
+
+ /* Close button */
+ .fa-times {
+   position: relative;
+   top: 3px;
+   right: -45%;
+ }
+
+ .fa-times:hover {
+   cursor: pointer;
+ }
+
+ .info {
+   display: flex;
+   justify-content: space-between !important;
+   margin-top: 40%;
+   width: 100%;
+   height: 100%;
+   font-size: 14px;
+
+ }
+
+ .inform {
+   color: #302f2f;
+ }
+
+ h3 {
+   margin-bottom: 5px;
+   padding-bottom: 0%;
+   color: rgb(78, 78, 78);
+   margin-top: 5%;
+ }
+
+ .container {
+   max-width: 250px;
+   height: 900px;
+   margin: 0;
+   padding: 0;
+   background-color: #d3d3d3;
+   ;
+ }
+
+ .section {
+   padding-top: 10px;
+   margin-bottom: 10px;
+   padding-right: 15px;
+ }
+
+
+ h6 {
+   font-size: 15px;
+   margin-bottom: 10px;
+   margin-left: 5px;
+ }
+
+ .name,
+ .name2,
+ .name3,
+ .dropdown li {
+   margin: 0;
+   /* Remove margin */
+   padding: 5px 10px;
+   /* Added padding for alignment */
+   display: flex;
+   /* Added to align icon and text */
+   align-items: center;
+   /* Align icon and text vertically */
+ }
+
+ /* Dropdown styles */
+ .dropdown {
+   list-style: none;
+ }
+
+ .dropdown li {
+   display: flex;
+   align-items: center;
+ }
+
+ .dropdown i {
+   margin-right: 5px;
+ }
+
+ /* Chat list styles */
+ .chat-list {
+   list-style: none;
+ }
+
+
+ .btn {
+   border-top: 0.5px solid white;
+   margin-top: 10px;
+   position: fixed;
+   left: 40px;
+   bottom: 15px;
+   padding: 0;
+   width: 220px;
+   border-radius: opx;
+ }
+
+ .start-chat-btn {
+   padding: 8px 12px;
+   cursor: pointer;
+   margin-top: 5px;
+   margin-bottom: 10px;
+   /* Added margin bottom */
+   padding-left: 15px;
+   bottom: 20px;
+   padding-top: 10px;
+   margin-left: 0;
+   margin-right: 0;
+   background-color: #d3d3d3;
+   border: none;
+ }
+
+ .fa-pen {
+   margin-right: 15px;
+ }
+
+ /* Dropdown icon */
+ .fa-angle-up {
+   margin-left: 32%;
+   /* Adjusted margin */
+   transition: transform 0.5s ease;
+   ;
+
+ }
+
+ .important {
+   display: flex;
+   flex-direction: row;
+
+ }
+
+ .important i {
+   margin-top: 20px;
+ }
+
+ /* Alice div styles */
+ .alice,
+ .name3 {
+   display: flex;
+   flex-direction: row;
+   justify-content: left;
+   background-color: white;
+   margin-left: 0;
+   margin-right: 0;
+   padding: 10px;
+ }
+
+ .alice {
+   height: 30px;
+ }
+
+ .alice i {
+   margin-left: 35%;
+   padding: 0;
+   margin-top: 0;
+ }
+
+ .fa-share-nodes {
+   margin-left: 35%;
+ }
+
+
+
+ /* Dark mode styles */
+ @media (prefers-color-scheme: dark) {
+   body {
+     background-color: #333;
+     /* Dark background color */
+     color: #fff;
+     /* White text color */
+     transition: background-color 0.3s ease, color 0.3s ease;
+     /* Smooth transition for mode change */
+   }
+
+   /* Navbar styles */
+   .navai {
+     background-color: #000000;
+   }
+
+   .aifooter {
+     background-color: #5f5e5e;
+   }
+
+   .text-space,
+   .url-space {
+     background-color: #5f5e5e;
+   }
+
+   .text-space::placeholder {
+     color: #d0d0d0;
+   }
+
+   .text-space,
+   .url-space {
+     color: #d0d0d0;
+   }
+
+   .text-space:focus {
+     outline: none;
+     border: none;
+   }
+
+   .url-space:focus {
+     outline: none;
+     border: none;
+   }
+
+   /* Icon styles */
+   .icon {
+     color: #ffffff;
+   }
+
+   .fas {
+     color: rgb(204, 202, 202) !important;
+   }
+
+   /* Username container styles */
+   .username-container {
+     background-color: #333;
+     color: #fff;
+   }
+
+   .chat-area .text {
+     color: #d0d0d0
+   }
+
+   .default-text {
+     text-align: center;
+     margin-top: 50px;
+     color: #ffffff;
+   }
+
+   .default-text img {
+     width: 100px;
+     height: auto;
+     margin-bottom: 20px;
+   }
+
+
+   /* Pinned icon styles */
+   .pinned-icon {
+     color: #fff !important;
+   }
+
+   .fa-times {
+     color: #fff !important;
+   }
+
+   /* Chat area styles */
+   .chat-area {
+     background-color: #333;
+   }
+
+   .profile-container {
+     background-color: #333;
+     color: #fff !important;
+   }
+
+   h3 {
+     color: #fff !important;
+   }
+
+   .status {
+     color: #fff !important;
+   }
+
+   .status-dot {
+     background-color: #fff !important;
+   }
+
+   .inform {
+     color: #fff !important;
+   }
+
+
+   /* Chat message styles */
+   .chat-message .timestamp,
+   .time,
+   .chat-message .text {
+     color: #ccc;
+   }
+
+   .url-input {
+     background-color: #5f5e5e;
+   }
+
+   .url-input input {
+     background-color: #5f5e5e;
+     color: #ccc;
+   }
+
+   .iconsss {
+     filter: invert(75%);
+   }
+
+ }
+
+ .light-mode-icon,
+ .dark-mode-icon {
+   display: none;
+   font-size: 35px;
+ }
+
+ @media (prefers-color-scheme: dark) {
+   .light-mode-icon {
+     display: none;
+
+     .dark-mode-icon {
+       display: inline-block;
+     }
+   }
+ }
+
+
+ @media (prefers-color-scheme: light) {
+   .light-mode-icon {
+     display: inline-block;
+   }
+
+   .dark-mode-icon {
+     display: none;
+   }
+ }
+
+ @media (max-width: 768px) {
+   .navai {
+     width: 50px;
+   }
+
+   .skynet-dropdown {
+     width: 150px;
+   }
+
+   .search-bar input {
+     width: calc(100% - 30px);
+   }
+
+   .profile-container {
+     width: 100%;
+     max-width: none;
+   }
+
+   .header {
+     padding-bottom: 20px;
+   }
+
+   .chat-message {
+     width: 95%;
+   }
+
+   .dropdown-content {
+     min-width: 120px;
+   }
+ }
+
+ @media (max-width: 576px) {
+   .navai {
+     width: 40px;
+   }
+
+   .skynet-dropdown {
+     width: 120px;
+   }
+
+   .search-bar input {
+     width: calc(100% - 20px);
+   }
+
+   .profile-container {
+     height: auto;
+   }
+
+   .header {
+     padding-bottom: 10px;
+   }
+
+   .chat-message {
+     width: 90%;
+   }
+
+   .dropdown-content {
+     min-width: 100px;
+   }
+ }
+
+ @media (max-width: 1024px) {
+   .navai {
+     width: 50px;
+   }
+
+   .skynet-dropdown {
+     width: 150px;
+   }
+
+   .search-bar input {
+     width: calc(100% - 30px);
+   }
+
+   .profile-container {
+     width: 100%;
+     max-width: none;
+   }
+
+   .header {
+     padding-bottom: 20px;
+   }
+
+   .chat-message {
+     width: 95%;
+   }
+
+   .dropdown-content {
+     min-width: 120px;
+   }
+ }
+
+ @media (max-width: 768px) {
+   .navai {
+     width: 40px;
+   }
+
+   .skynet-dropdown {
+     width: 120px;
+   }
+
+   .search-bar input {
+     width: calc(100% - 20px);
+   }
+
+   .profile-container {
+     height: auto;
+   }
+
+   .header {
+     padding-bottom: 10px;
+   }
+
+   .chat-message {
+     width: 90%;
+   }
+
+   .dropdown-content {
+     min-width: 100px;
+   }
+ }
+
+ @media (max-width: 576px) {
+   .navai {
+     width: 30px;
+   }
+
+   .skynet-dropdown {
+     width: 100px;
+   }
+
+   .search-bar input {
+     width: calc(100% - 10px);
+   }
+
+   .chat-message {
+     width: 85%;
+   }
+
+   .dropdown-content {
+     min-width: 80px;
+   }
+ }
+
+ @media (max-width: 768px) {
+
+   .chat-message {
+     width: 90%;
+   }
+
+
+   .aifooter i {
+     font-size: 14px;
+   }
+ }
+
+ @media (max-width: 576px) {
+   .chat-message {
+     width: 85%;
+   }
+
+   .aifooter i {
+     font-size: 12px;
+
+   }
+
+   .textarea {
+     width: 300px;
+   }
+ }
+
+ .default-text {
+   visibility: visible;
+   /* Make sure it's set to visible */
+ }
+
+ .default-text .chat-message,
+ .default-text .icons-right {
+   display: none;
+ }
+
+ .default-text {
+   text-align: center;
+   margin-top: 50px;
+   /* Adjust the top margin as needed */
+ }
+
+ .default-text img {
+   width: 100px;
+   /* Adjust the image width as needed */
+   height: auto;
+   margin-bottom: 20px;
+   /* Adjust the gap between image and text */
+ }
+
+ @media (max-width: 768px) {
+   .default-text {
+     margin-top: 30px;
+     /* Adjust the top margin for smaller screens */
+   }
+
+   .default-text img {
+     width: 80px;
+     /* Adjust the image width for smaller screens */
+   }
+ }
+
+ .rec-chats {
+   display: flex;
+ }
+
+ .rec-chats i {
+   margin-top: 10px;
+   margin-left: 5px;
+ }
+
+ .recent-chats {
+   margin: 0;
+ }
+
+ .fa-share-nodes:hover {
+   cursor: pointer;
+ }
+
+ .chat-item {
+   padding: 10px;
+   cursor: pointer;
+   display: flex;
+   justify-content: space-between;
+ }
+
+ .chat-item:hover {
+   background-color: #ffffff;
+ }
+
+ .highlighted {
+   background-color: #ffffff;
+ }
+
+ .pinned:before {
+   content: "\f08d";
+   margin-right: 5px;
+   color: #000000;
+   font-family: "Font Awesome 5 Free";
+   font-weight: 900;
+ }
+
+ .rec-chats i:hover {
+   cursor: pointer;
+ }
+ 
+ .moon-icon:hover{
+>>>>>>> Stashed changes
   cursor: pointer;
 }
 
