@@ -4,7 +4,7 @@
   <input type="hidden" class="api" id="api" value="<%= process.env.API_KEY %>">
   <%- include('../includes/searchpage-nav.ejs') %>
     <div class="container">
-      <div class="row">
+      <div class="row contain">
         <div class="col-sm-8">
           <% if (see && see.result && see.result.data && see.result.data.items && see.result.data.items.length> 0) {%>
             <% see.result.data.items.forEach(function(sees) { %>
