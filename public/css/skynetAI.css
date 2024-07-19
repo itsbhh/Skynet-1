@@ -1641,3 +1641,12 @@ a {
   }
 }
 
+@media (max-width: 500px) {
+  .aifooter {
+    position: fixed;
+    top: -110px !important;
+    z-index: 101 !important;
+    margin-left: 70px !important;
+  }
+}
+
