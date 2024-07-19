@@ -177,3 +177,9 @@ h4{
         max-width: 300px;
     }
 }
+
+@media (max-width:2000px) {
+    .sec{
+        margin-top: 10% !important;
+    }
+}
