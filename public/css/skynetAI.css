@@ -9,6 +9,7 @@
 body {
   font-family: "Arial", sans-serif;
   background: #f9f9f9;
+  overflow-y: scroll !important;
 }
 
 .skynet-container {
@@ -427,13 +428,14 @@ a {
   width: 50%;
   background-color: #eceaea;
   border-radius: 28px;
+  position: relative !important;
   padding: 10px;
-  position: absolute;
-  bottom: 20px;
+  margin-bottom: 0% !important;
+  
 }
 
 .indexAI {
-  bottom: -30px !important;
+  bottom: -180px !important;
 }
 
 .chat-footer {
@@ -1139,6 +1141,7 @@ h6 {
   .aifooter i{
     margin-left : -50% !important;
   }
+
 }
 a {
   text-decoration: none !important;
@@ -1631,3 +1634,10 @@ a {
     margin-left: 29% !important;
   }
 }
+
+@media (max-width:336px) {
+  .aifooter i{
+    margin-left: -80% !important;
+  }
+}
+
