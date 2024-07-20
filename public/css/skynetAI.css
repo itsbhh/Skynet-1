@@ -1643,9 +1643,26 @@ a {
 
 @media (max-width: 500px) {
   .aifooter {
-    top: -5px !important;
+    top: 0px !important;
     z-index: 101 !important;
     margin-left: 70px !important;
+  }
+  .aifooter i{
+    margin-left: -90% !important;
+  }
+  @media (prefers-color-scheme: dark){
+    .aifooter {
+      background-color: #5f5e5e !important;
+    }
+  
+    .text-space,
+    .url-space {
+      background-color: #5f5e5e !important;
+    }
+  
+    .text-space::placeholder {
+      color: #d0d0d0 !important;
+    }
   }
 }
 

@@ -416,7 +416,7 @@ body {
 
   #Layer_1 {
     background-color: none !important;
-    filter: invert(65%);
+    filter: invert(65%) !important;
   }
   .chat-container{
     background-color: #393939;
@@ -716,6 +716,19 @@ body {
     margin-top: -15% !important; 
     margin-left: 12% !important;
     color:  gray !important;
+  }
+}
+
+@media (max-width: 500px){
+  @media (prefers-color-scheme: dark){
+    #Layer_1 {
+      background-color: none !important;
+      filter: invert(65%) !important;
+    }
+    .text-space {
+      background-color: #585858 !important;
+      color: #ffffff !important;
+    }
   }
 }
 
